@@ -153,6 +153,12 @@ public class c1_Introduction extends IntroductionBase {
         CopyOnWriteArrayList<String> companyList = new CopyOnWriteArrayList<>();
 
         fortuneTop5()
+                .subscribe(
+                        companyList::add,
+                        error -> {},
+                        () -> serviceCallCompleted.set(true)
+                        );
+
         //todo: change this line only
         ;
 
